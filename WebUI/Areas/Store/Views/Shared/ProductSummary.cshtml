@@ -1,0 +1,15 @@
+﻿@model DomainModel.Entities.Product
+
+<div class="item">
+    <h3>@Model.Name</h3>
+    @Model.Description
+    @using (Html.BeginForm("AddToCart", "Cart"))
+    {
+        @Html.HiddenFor(x => x.ProductID)
+        //Это для того чтобы продолжить покупку
+        @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
+        //добавляет ссылку добавить в корзину
+        <input type="submit" value="+ Add to cart" />
+    }
+    <h4>@Model.Price.ToString("c")</h4>
+</div>

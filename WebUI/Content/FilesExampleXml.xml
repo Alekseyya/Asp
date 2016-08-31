@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<Price>
+   <Item>
+      <Brand>AUTOCLOVER</Brand>
+      <Articul>A037</Articul>
+      <Description>Ветровики (дефлекторы окон) Chevrolet Lanos 2006- (Корея)</Description>
+      <BasePrice>44.95</BasePrice>
+      <Quantity>3</Quantity>
+   </Item>
+   <Item>
+      <Brand>AvtoS</Brand>
+      <Articul>GW 11</Articul>
+      <Description>ТСУ (фаркоп) Great Wall Hover H6 2013- необходима подрезка бампера</Description>
+      <BasePrice>5.95</BasePrice>
+      <Quantity>5</Quantity>
+   </Item>
+</Price>

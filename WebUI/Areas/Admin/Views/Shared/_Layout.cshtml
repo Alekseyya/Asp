@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - Yapart административная часть</title>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Areas/Admin/Content/Admin.css" rel="stylesheet" type="text/css" />
+    
+</head>
+<body>
+    <div id="wrap">
+        <div id="header-space">
+            <div id="logo">
+                <img src="assets/logo.png" alt="" />
+            </div>
+            <div id="company-name">Администрирование</div>
+            <div id="tagline">Yapart.net</div>
+
+        </div>
+        <div id="navbar">
+            <div id="nbar">
+                <ul>
+                    <li>@Html.ActionLink("Страницы", "Index", "Pages")</li>
+                    <li>@Html.ActionLink("Пользователи", "Index", "Users")</li>
+                    <li>@Html.ActionLink("Бренды", "Index", "Brands")</li>
+                    <li>@Html.ActionLink("Категории товаров", "Index", "Categories")</li>
+                    <li>@Html.ActionLink("Города", "Index", "City")</li>
+                    <li>@Html.ActionLink("Товары", "Index", "Products")</li>
+                    <li>@Html.ActionLink("Категории на главной", "Index", "AdvertItems")</li>
+                </ul>
+            </div>
+        </div>
+        <div id="content-wrap">
+            <div id="content">
+                <h1>@ViewBag.Title</h1>
+                @RenderBody()
+                @RenderSection("scripts", required: false)
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

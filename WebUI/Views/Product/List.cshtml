@@ -1,0 +1,30 @@
+﻿@model WebUI.Models.ProductsListViewModel
+
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_LayoutForLogin.cshtml";
+}
+
+<p>
+   @using(Html.BeginForm("Search", "Product", FormMethod.Get))
+   {
+       @Html.TextBox("product");
+       <input class="btn btn-primary" type="submit" value="Search for products" />
+       
+   }
+</p>
+ 
+        
+    @foreach (var p in Model.Products)
+    {
+              
+        Html.RenderPartial("ProductSummary", p);
+        
+              
+    }
+
+
+<ul class="pagination">
+    <li>@Html.PageLinks(Model.PagingInfo, x => Url.Action("List","Product", new { page = x }))</li>
+
+</ul>

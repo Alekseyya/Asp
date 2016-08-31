@@ -1,0 +1,27 @@
+﻿@*@model WebUI.Models.ProductsListViewModel*@
+
+@*Дописать епонадобится*@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Areas/Store/Content/Site.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+    <div id="header">
+        <div class="title">Yapart</div>
+    </div>
+    <div id="categories">
+        @{Html.RenderAction("Menu", "Nav");}
+    </div>
+    <div class="main clearfix">
+        <div id="content">
+            @RenderBody()
+        </div>
+    </div>
+        <footer>(с) Все права защищены Yapart 2016</footer>
+</body>
+</html>

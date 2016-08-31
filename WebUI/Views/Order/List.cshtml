@@ -1,0 +1,72 @@
+﻿@model IEnumerable<DomainModel.Entities.OrderItem>
+
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_LayoutForLogin.cshtml";
+}
+
+
+<table class="table">
+    <tr>
+        <th>
+            Время заказа
+        </th>
+        <th>
+            Артикул
+        </th>
+        <th>
+            Описание
+        </th>
+        <th>
+            Количество
+        </th>
+        <th>
+            Цена
+        </th>
+        <th>
+            Сумма
+        </th>
+
+        <th>
+            Статус
+        </th>
+        
+        <th>Отмена</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>@item.CreationTime</td>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.Product.Articul)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Quantity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Product.Price)
+        </td>
+        
+        <td>
+            @item.Total.ToString("c")
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrderStatus)
+        </td>
+        <td>
+            @using (Html.BeginForm("RemoveFromOrder", "Order"))
+            {
+                @Html.Hidden("Id", item.ProductId)
+                
+                <input class="actionButtons" type="submit" value="Remove" />
+            }
+        </td>
+                
+    </tr>
+}
+
+</table>

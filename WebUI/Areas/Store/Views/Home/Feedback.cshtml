@@ -1,0 +1,40 @@
+﻿@model WebUI.Areas.Store.Models.FeedbackViewModel
+@{
+    Layout = "~/Areas/Store/Views/Shared/MainViewCommon.cshtml";
+}
+
+<div class="feedback_container">
+    <h2>Обратная связь</h2>
+    <br />
+    <br />
+    @using (Html.BeginForm())
+    {
+        <table style="width:100%;">
+            <tr>
+                <td style="text-align: right; padding-right:10px; height:28px; width:150px; vertical-align:top;">ФИО:</td>
+                <td>@Html.TextBoxFor(m => m.Contacter, new { style = "width:95%;" })</td>
+            </tr>
+            <tr>
+                <td style="text-align: right; padding-right:10px; height:28px; width:150px; vertical-align:top;">Контакт:</td>
+                <td>@Html.TextBoxFor(m => m.Phone, new { style = "width:95%;" })</td>
+            </tr>
+            <tr>
+                <td style="text-align: right; padding-right:10px; vertical-align:top;">Сообщение:</td>
+                <td>@Html.TextAreaFor(m => m.Message, new { style = "width:95%; height:200px;" })</td>
+            </tr>
+           
+            <tr>
+                <td colspan="2">
+                    @TempData["sentResult"]
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td style="text-align: right; padding-right:40px;">
+                    <input type="submit" class="button" value="Отправить" />
+                </td>
+            </tr>
+        </table>
+    }
+</div>
+

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Products>
+  <Items>
+    <Brand>555</Brand>
+    <Articul>SL-7705</Articul>
+    <Quantity>9</Quantity>
+    <BasePrice>302</BasePrice>
+    <Description>Стойка стабилизатора зад прав/лев </Description>
+  </Items>
+  <Items>
+    <Brand>Eolo</Brand>
+    <Articul>555</Articul>
+    <Quantity>15</Quantity>
+    <BasePrice>705</BasePrice>
+    <Description>Фильтр салонный угольный X5 (E53)/Range Rover III </Description>
+  </Items>
+</Products>

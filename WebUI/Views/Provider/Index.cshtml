@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutForLogin.cshtml";
+}
+
+<h2>Документы</h2>
+<li>@Html.ActionLink("Скачать пример прайса", "GetFile", "Provider", null, new { @class = "btn btn-info" })</li> 
+
+<h2>Загрузить файл цен</h2>
+
+@using (Html.BeginForm("UploadXML","Provider",FormMethod.Post, new { enctype = "multipart/form-data"}))
+   {
+    @ViewBag.Error 
+    <input type="file" name="file" />
+    <input type="submit" value="Upload" />
+    <input type="submit" value="Import"/>
+    
+    
+}
+@*@using (Html.BeginForm("Succes", "Provider", FormMethod.Post))
+{
+    <input type="submit" value="Import" />
+
+
+}*@
+
+@*@{Html.RenderPartial("Success");}*@

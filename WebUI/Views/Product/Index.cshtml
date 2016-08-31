@@ -1,0 +1,37 @@
+﻿@model WebUI.Models.ProductsListViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<table class="table table-striped">
+
+    <tr>
+        <th>Категория</th>
+        <th>Артикул</th>
+        <th>Описание</th>
+        <th>Средняя цена</th>
+        
+    </tr>
+
+    @foreach (var p in Model.Products)
+    {
+        <tr>
+            <td align="center" width="15">@p.Category.Name</td>
+            <td align="center" width="15">@p.Articul</td>
+            <td align="center" width="60">@p.Description</td>
+            <td align="center" width="10">@p.Price.ToString("c")</td>
+            
+        </tr>
+    }
+    
+    
+</table>
+
+<ul class="pagination">
+   <li>@Html.PageLinks(Model.PagingInfo, x => Url.Action("Index", new { page = x }))</li> 
+    
+    </ul>
+    

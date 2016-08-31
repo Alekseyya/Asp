@@ -1,0 +1,52 @@
+﻿@model IEnumerable<DomainModel.Entities.Employee>
+
+@{
+    ViewBag.Title = "EmployeesList";
+    Layout = "~/Views/Shared/_LayoutForLogin.cshtml";
+}
+
+
+<table class="table">
+    <tr>
+        <th>
+            Имя
+        </th>
+        <th>
+            Фамилия
+        </th>
+        <th>
+            Телефон
+        </th>
+        <th>
+            Емеил
+        </th>
+        <th>
+            Должность
+        </th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Name</td>
+
+            <td>
+                @item.LastName
+            </td>
+            <td>
+                @item.Phone
+            </td>
+            <td>
+                @item.Email
+            </td>
+            <td>
+                @item.Position
+            </td>
+
+            
+        </tr>
+    }
+
+</table>
+

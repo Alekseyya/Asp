@@ -1,0 +1,26 @@
+﻿
+<table class="table table-bordered">
+
+    <tr>
+        
+        <th>Brand</th>
+        <th>Articul</th>
+        <th>Descriptions</th>
+        <th>BasePrice</th>
+        <th>Quantity</th>
+    </tr>
+
+    @foreach (var p in ViewBag.Result)
+    {
+        <tr>
+            <td>@p.Brand</td>
+            <td>@p.Articul</td>
+            <td>@p.Description</td>
+            <td>@p.BasePrice</td>
+            <td>@p.Quantity</td>
+
+        </tr>
+    }
+
+
+</table>
